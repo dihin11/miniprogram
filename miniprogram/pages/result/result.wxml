@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="result-card">
+    <view class="header">
+      <text class="title">{{resultTitle}}</text>
+      <text class="date">{{currentDate}}</text>
+    </view>
+
+    <view class="content">
+      <view class="fortune-text">{{fortuneResult}}</view>
+      
+      <view wx:if="{{type !== 'self'}}" class="match-score">
+        <text class="score-title">{{type === 'friendship' ? '友情指数' : '缘分指数'}}</text>
+        <text class="score">{{matchScore}}%</text>
+        <progress percent="{{matchScore}}" stroke-width="12" color="#07c160" />
+      </view>
+    </view>
+
+    <view class="actions">
+      <button class="share-btn" open-type="share">分享结果</button>
+      <button class="restart-btn" bindtap="goBack">重新测算</button>
+    </view>
+  </view>
+</view>

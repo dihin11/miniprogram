@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="header">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <text class="title">AI算命大师</text>
+  </view>
+
+  <view class="fortune-types">
+    <view class="card" wx:for="{{fortuneTypes}}" wx:key="key" bindtap="goToUpload" data-type="{{item.key}}">
+      <image src="{{item.image}}" mode="aspectFit"></image>
+      <text class="type-title">{{item.title}}</text>
+      <text class="type-desc">{{item.subtitle}}</text>
+    </view>
+  </view>
+</view>

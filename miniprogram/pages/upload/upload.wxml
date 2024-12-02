@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="upload-area">
+    <text class="title">{{uploadTitle}}</text>
+    <text class="subtitle">{{uploadSubtitle}}</text>
+
+    <view class="photo-container">
+      <view class="photo-slot" bindtap="chooseImage" data-index="0">
+        <image wx:if="{{images[0]}}" src="{{images[0]}}" mode="aspectFill"></image>
+        <view wx:else class="upload-placeholder">
+          <text class="iconfont icon-camera"></text>
+          <text>点击上传照片</text>
+        </view>
+      </view>
+
+      <view wx:if="{{needTwoPhotos}}" class="photo-slot" bindtap="chooseImage" data-index="1">
+        <image wx:if="{{images[1]}}" src="{{images[1]}}" mode="aspectFill"></image>
+        <view wx:else class="upload-placeholder">
+          <text class="iconfont icon-camera"></text>
+          <text>点击上传照片</text>
+        </view>
+      </view>
+    </view>
+
+    <button class="submit-btn" bindtap="submitPhotos" disabled="{{!canSubmit}}">
+      开始测算
+    </button>
+  </view>
+</view>
